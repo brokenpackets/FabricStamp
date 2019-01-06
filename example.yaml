@@ -193,7 +193,7 @@ DC1-Border-02:
       portconfig: 10.225.2.3/31
       desc: DC1-Service-02
 
-#Storage Leaf
+#Storage Leaf:
 DC1-Storage-01:
     description: Storage Leaf
     Ma1: 172.16.254.7/32
@@ -254,7 +254,7 @@ DC1-Storage-02:
       portconfig: 10.224.4.3/31
       desc: DC1-Spine-04
 
-#Service Leaf
+#Service Leaf:
 DC1-Service-01:
     description: Service Leaf
     Ma1: 172.16.254.9/32
