@@ -191,7 +191,7 @@ def main():
                         f.write('      network '+doc[item]['Lo100']+'\n')
                 if device_role in evpn_roles:
                     for spine in spines:
-                        spineip = doc[spine]['Lo0']
+                        spineip = doc[spine]['Lo0'].replace('/32','')
                         spine_asn = doc[spine]['BGP-AS']
                         f.write(evpnleaf.render(spineip=spineip,
                                 spine_asn=spine_asn, spine_Lo0=spine+'Lo0'))
