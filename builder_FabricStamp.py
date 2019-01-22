@@ -205,7 +205,7 @@ def main():
           if doc[switch]['description'] == 'Spine':
             spines.append(switch)
           else:
-            leaves.append(leaves)
+            leaves.append(switch)
     ethernetport = re.compile('^E[0-9]{1,2}')
     routedlinks = []
     for item in doc.keys():
