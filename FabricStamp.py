@@ -129,9 +129,14 @@ def main():
     with open(yamlfile, 'r') as f:
         doc = yaml.load(f)
     spines = []
+    leaves = []
     for switch in doc.keys():
-        if doc[switch]['description'] == 'Spine':
-            spines.append(switch)
+        if doc[switch]['description'] in evpn_roles:
+            if doc[switch]['description'] == 'Spine':
+                spines.append(switch)
+            else:
+                leaves.append(leaves)
+           
     ethernetport = re.compile('^E[0-9]{1,2}')
     routedlinks = []
     for item in doc.keys():
@@ -190,6 +195,13 @@ def main():
                     if 'Lo100' in doc[item].keys():
                         f.write('      network '+doc[item]['Lo100']+'\n')
                 if device_role in evpn_roles:
+                  if device_role == 'Spine':
+                    for leaf in leaves:
+                        leafip = doc[leaf]['Lo0'].replace('/32','')
+                        leaf_asn = doc[leaf]['BGP-AS']
+                        f.write(evpnleaf.render(spineip=leafip,
+                                spine_asn=leaf_asn, spine_Lo0=leaf+'Lo0'))
+                  else:
                     for spine in spines:
                         spineip = doc[spine]['Lo0'].replace('/32','')
                         spine_asn = doc[spine]['BGP-AS']
