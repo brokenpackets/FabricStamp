@@ -227,7 +227,7 @@ def main():
                         for leaf in leaves:
                             leafip = doc[leaf]['Lo0'].replace('/32','')
                             leaf_asn = doc[leaf]['BGP-AS']
-                            tempconfiglet(evpnleaf.render(spineip=leafip,spine_asn=leaf_asn,
+                            tempconfiglet.append(evpnleaf.render(spineip=leafip,spine_asn=leaf_asn,
                                                     spine_Lo0=leaf+'Lo0'))
                     else:
                         for spine in spines:
