@@ -51,7 +51,7 @@ bgp_neighbor = Template("""\
 ## iBGP MLAG Template
 ibgp_bgpconfig = Template("""\
    neighbor iBGP_MLAG peer-group
-   neighbor iBGP_MLAG remote-as {{ bgp-as }}
+   neighbor iBGP_MLAG remote-as {{ bgpas }}
    neighbor iBGP_MLAG next-hop-self
    neighbor iBGP_MLAG fall-over bfd
    neighbor {{ mlag_neighbor }} peer-group iBGP_MLAG\n
@@ -176,7 +176,7 @@ def main():
                     f.write(bgpconfig.render(bgpas=bgpas,rtrid=rtrid))
                 if 'MLAG' in doc[item].keys():
                     mlag = doc[item]['MLAG']
-                    f.write(ibgp_bgpconfig.render(bgp-as=bgpas,mlag_neighbor=mlag_peer(mlag['IP'])))
+                    f.write(ibgp_bgpconfig.render(bgpas=bgpas,mlag_neighbor=mlag_peer(mlag['IP'])))
                 for interface in routedlinks:
                     intfip = doc[item][interface]['portconfig']
                     neighborip = bgp_peer(intfip)
