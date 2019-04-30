@@ -98,8 +98,8 @@ mlag configuration
    local-interface vlan{{ vlanid }}
    peer-address {{ peerip }}
    peer-link Port-Channel{{ mlag_portchannel }}
-   reload-delay mlag 360
-   reload-delay non-mlag 420
+   reload-delay mlag 420
+   reload-delay non-mlag 360
    reload-delay mode lacp standby\n
 """)
 
