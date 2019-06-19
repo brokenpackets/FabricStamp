@@ -2,6 +2,7 @@
 #Spines:
 DC1-Spine-01:
     description: Spine
+    serial: SSJ0000001
     Ma1: 172.16.254.1/24
     Lo0: 172.16.255.1/32
     BGP-AS: '65100'
@@ -44,6 +45,7 @@ DC1-Spine-01:
 
 DC1-Spine-02:
     description: Spine
+    serial: SSJ0000002
     Ma1: 172.16.254.2/24
     Lo0: 172.16.255.2/32
     BGP-AS: '65100'
@@ -86,6 +88,7 @@ DC1-Spine-02:
 
 DC1-Spine-03:
     description: Spine
+    serial: SSJ0000003
     Ma1: 172.16.254.3/24
     Lo0: 172.16.255.3/32
     BGP-AS: '65100'
@@ -128,6 +131,7 @@ DC1-Spine-03:
 
 DC1-Spine-04:
     description: Spine
+    serial: SSJ0000004
     Ma1: 172.16.254.4/24
     Lo0: 172.16.255.4/32
     BGP-AS: '65100'
@@ -171,6 +175,7 @@ DC1-Spine-04:
 #Border Leaf:
 DC1-Border-01:
     description: Border Leaf
+    serial: SSJ0000005
     Ma1: 172.16.254.5/24
     Lo0: 172.16.255.5/32
     BGP-AS: '65101'
@@ -183,6 +188,7 @@ DC1-Border-01:
 
 DC1-Border-02:
     description: Border Leaf
+    serial: SSJ0000006
     Ma1: 172.16.254.6/24
     Lo0: 172.16.255.6/32
     BGP-AS: '65102'
@@ -196,6 +202,7 @@ DC1-Border-02:
 #Storage Leaf:
 DC1-Storage-01:
     description: Storage Leaf
+    serial: SSJ0000007
     Ma1: 172.16.254.7/24
     Lo0: 172.16.255.7/32
     Lo100: 172.16.254.103/32
@@ -226,6 +233,7 @@ DC1-Storage-01:
 
 DC1-Storage-02:
     description: Storage Leaf
+    serial: SSJ0000008
     Ma1: 172.16.254.8/24
     Lo0: 172.16.255.8/32
     Lo100: 172.16.254.103/32
@@ -257,6 +265,7 @@ DC1-Storage-02:
 #Service Leaf:
 DC1-Service-01:
     description: Service Leaf
+    serial: SSJ0000009
     Ma1: 172.16.254.9/24
     Lo0: 172.16.255.9/32
     Lo100: 172.16.254.104/32
@@ -299,6 +308,7 @@ DC1-Service-01:
 
 DC1-Service-02:
     description: Service Leaf
+    serial: SSJ00000010
     Ma1: 172.16.254.10/24
     Lo0: 172.16.255.10/32
     Lo100: 172.16.254.104/32
@@ -342,6 +352,7 @@ DC1-Service-02:
 #Compute Leaf:
 DC1-Compute01-01:
     description: Compute Leaf
+    serial: SSJ0000011
     Ma1: 172.16.254.11/24
     Lo0: 172.16.255.11/32
     Lo100: 172.16.254.105/32
@@ -372,6 +383,7 @@ DC1-Compute01-01:
 
 DC1-Compute01-02:
     description: Compute Leaf
+    serial: SSJ0000012
     Ma1: 172.16.254.12/24
     Lo0: 172.16.255.12/32
     Lo100: 172.16.254.105/32
@@ -402,6 +414,7 @@ DC1-Compute01-02:
 
 DC1-Compute02-01:
     description: Compute Leaf
+    serial: SSJ0000013
     Ma1: 172.16.254.13/24
     Lo0: 172.16.255.13/32
     Lo100: 172.16.254.106/32
@@ -432,6 +445,7 @@ DC1-Compute02-01:
 
 DC1-Compute02-02:
     description: Compute Leaf
+    serial: SSJ0000014
     Ma1: 172.16.254.14/24
     Lo0: 172.16.255.14/32
     Lo100: 172.16.254.106/32
@@ -462,6 +476,7 @@ DC1-Compute02-02:
 
 DC1-Compute03-01:
     description: Compute Leaf
+    serial: SSJ0000015
     Ma1: 172.16.254.15/24
     Lo0: 172.16.255.15/32
     Lo100: 172.16.254.107/32
@@ -492,6 +507,7 @@ DC1-Compute03-01:
 
 DC1-Compute03-02:
     description: Compute Leaf
+    serial: SSJ0000016
     Ma1: 172.16.254.16/24
     Lo0: 172.16.255.16/32
     Lo100: 172.16.254.107/32
@@ -522,6 +538,7 @@ DC1-Compute03-02:
 
 DC1-Compute04-01:
     description: Compute Leaf
+    serial: SSJ0000017
     Ma1: 172.16.254.17/24
     Lo0: 172.16.255.17/32
     Lo100: 172.16.254.108/32
@@ -552,6 +569,7 @@ DC1-Compute04-01:
 
 DC1-Compute04-02:
     description: Compute Leaf
+    serial: SSJ0000018
     Ma1: 172.16.254.18/24
     Lo0: 172.16.255.18/32
     Lo100: 172.16.254.108/32
