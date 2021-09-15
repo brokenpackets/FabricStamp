@@ -1,600 +1,234 @@
 ---
 #Spines:
-DC1-Spine-01:
+Arista-SP1:
     description: Spine
-    serial: SSJ0000001
-    Ma1: 172.16.254.1/24
-    Lo0: 172.16.255.1/32
+    serial: SSJ11111111
+    container: vSpine
+    Ma1: 192.168.255.1/24
+    Lo0: 10.208.255.1/32
     BGP-AS: '65100'
-    E1/1:
-      portconfig: 10.224.1.0/31
-      desc: DC1-Storage-01
-    E2/1:
-      portconfig: 10.224.1.2/31
-      desc: DC1-Storage-02
-    E3/1:
-      portconfig: 10.224.1.4/31
-      desc: DC1-Service-01
-    E4/1:
-      portconfig: 10.224.1.6/31
-      desc: DC1-Service-02
-    E5/1:
-      portconfig: 10.224.1.8/31
-      desc: DC1-Compute01-01
-    E6/1:
-      portconfig: 10.224.1.10/31
-      desc: DC1-Compute01-02
-    E7/1:
-      portconfig: 10.224.1.12/31
-      desc: DC1-Compute02-01
-    E8/1:
-      portconfig: 10.224.1.14/31
-      desc: DC1-Compute02-02
-    E9/1:
-      portconfig: 10.224.1.16/31
-      desc: DC1-Compute03-01
-    E10/1:
-      portconfig: 10.224.1.18/31
-      desc: DC1-Compute03-02
-    E11/1:
-      portconfig: 10.224.1.20/31
-      desc: DC1-Compute04-01
-    E12/1:
-      portconfig: 10.224.1.22/31
-      desc: DC1-Compute04-02
+    E1:
+      portconfig: 10.208.1.0/31
+      desc: Arista-CL5
+    E2:
+      portconfig: 10.208.1.2/31
+      desc: Arista-CL6
+    E3:
+      portconfig: 10.208.1.4/31
+      desc: Arista-CL7
+    E4:
+      portconfig: 10.208.1.6/31
+      desc: Arista-CL8
+    E5:
+      portconfig: 10.208.1.8/31
+      desc: Arista-SL9
+    E6:
+      portconfig: 10.208.1.10/31
+      desc: Arista-SL10
 
-DC1-Spine-02:
+Arista-SP2:
     description: Spine
-    serial: SSJ0000002
-    Ma1: 172.16.254.2/24
-    Lo0: 172.16.255.2/32
+    serial: SSJ22222222
+    container: vSpine
+    Ma1: 192.168.255.2/24
+    Lo0: 10.208.255.2/32
     BGP-AS: '65100'
-    E1/1:
-      portconfig: 10.224.2.0/31
-      desc: DC1-Storage-01
-    E2/1:
-      portconfig: 10.224.2.2/31
-      desc: DC1-Storage-02
-    E3/1:
-      portconfig: 10.224.2.4/31
-      desc: DC1-Service-01
-    E4/1:
-      portconfig: 10.224.2.6/31
-      desc: DC1-Service-02
-    E5/1:
-      portconfig: 10.224.2.8/31
-      desc: DC1-Compute01-01
-    E6/1:
-      portconfig: 10.224.2.10/31
-      desc: DC1-Compute01-02
-    E7/1:
-      portconfig: 10.224.2.12/31
-      desc: DC1-Compute02-01
-    E8/1:
-      portconfig: 10.224.2.14/31
-      desc: DC1-Compute02-02
-    E9/1:
-      portconfig: 10.224.2.16/31
-      desc: DC1-Compute03-01
-    E10/1:
-      portconfig: 10.224.2.18/31
-      desc: DC1-Compute03-02
-    E11/1:
-      portconfig: 10.224.2.20/31
-      desc: DC1-Compute04-01
-    E12/1:
-      portconfig: 10.224.2.22/31
-      desc: DC1-Compute04-02
+    E1:
+      portconfig: 10.208.2.0/31
+      desc: Arista-CL5
+    E2:
+      portconfig: 10.208.2.2/31
+      desc: Arista-CL6
+    E3:
+      portconfig: 10.208.2.4/31
+      desc: Arista-CL7
+    E4:
+      portconfig: 10.208.2.6/31
+      desc: Arista-CL8
+    E5:
+      portconfig: 10.208.2.8/31
+      desc: Arista-SL9
+    E6:
+      portconfig: 10.208.2.10/31
+      desc: Arista-SL10
 
-DC1-Spine-03:
+Arista-SP3:
     description: Spine
-    serial: SSJ0000003
-    Ma1: 172.16.254.3/24
-    Lo0: 172.16.255.3/32
+    serial: SSJ33333333
+    container: vSpine
+    Ma1: 192.168.255.3/24
+    Lo0: 10.208.255.3/32
     BGP-AS: '65100'
-    E1/1:
-      portconfig: 10.224.3.0/31
-      desc: DC1-Storage-01
-    E2/1:
-      portconfig: 10.224.3.2/31
-      desc: DC1-Storage-02
-    E3/1:
-      portconfig: 10.224.3.4/31
-      desc: DC1-Service-01
-    E4/1:
-      portconfig: 10.224.3.6/31
-      desc: DC1-Service-02
-    E5/1:
-      portconfig: 10.224.3.8/31
-      desc: DC1-Compute01-01
-    E6/1:
-      portconfig: 10.224.3.10/31
-      desc: DC1-Compute01-02
-    E7/1:
-      portconfig: 10.224.3.12/31
-      desc: DC1-Compute02-01
-    E8/1:
-      portconfig: 10.224.3.14/31
-      desc: DC1-Compute02-02
-    E9/1:
-      portconfig: 10.224.3.16/31
-      desc: DC1-Compute03-01
-    E10/1:
-      portconfig: 10.224.3.18/31
-      desc: DC1-Compute03-02
-    E11/1:
-      portconfig: 10.224.3.20/31
-      desc: DC1-Compute04-01
-    E12/1:
-      portconfig: 10.224.3.22/31
-      desc: DC1-Compute04-02
+    E1:
+      portconfig: 10.208.3.0/31
+      desc: Arista-CL5
+    E2:
+      portconfig: 10.208.3.2/31
+      desc: Arista-CL6
+    E3:
+      portconfig: 10.208.3.4/31
+      desc: Arista-CL7
+    E4:
+      portconfig: 10.208.3.6/31
+      desc: Arista-CL8
+    E5:
+      portconfig: 10.208.3.8/31
+      desc: Arista-SL9
+    E6:
+      portconfig: 10.208.3.10/31
+      desc: Arista-SL10
 
-DC1-Spine-04:
+Arista-SP4:
     description: Spine
-    serial: SSJ0000004
-    Ma1: 172.16.254.4/24
-    Lo0: 172.16.255.4/32
+    serial: SSJ44444444
+    container: vSpine
+    Ma1: 192.168.255.4/24
+    Lo0: 10.208.255.4/32
     BGP-AS: '65100'
-    E1/1:
-      portconfig: 10.224.4.0/31
-      desc: DC1-Storage-01
-    E2/1:
-      portconfig: 10.224.4.2/31
-      desc: DC1-Storage-02
-    E3/1:
-      portconfig: 10.224.4.4/31
-      desc: DC1-Service-01
-    E4/1:
-      portconfig: 10.224.4.6/31
-      desc: DC1-Service-02
-    E5/1:
-      portconfig: 10.224.4.8/31
-      desc: DC1-Compute01-01
-    E6/1:
-      portconfig: 10.224.4.10/31
-      desc: DC1-Compute01-02
-    E7/1:
-      portconfig: 10.224.4.12/31
-      desc: DC1-Compute02-01
-    E8/1:
-      portconfig: 10.224.4.14/31
-      desc: DC1-Compute02-02
-    E9/1:
-      portconfig: 10.224.4.16/31
-      desc: DC1-Compute03-01
-    E10/1:
-      portconfig: 10.224.4.18/31
-      desc: DC1-Compute03-02
-    E11/1:
-      portconfig: 10.224.4.20/31
-      desc: DC1-Compute04-01
-    E12/1:
-      portconfig: 10.224.4.22/31
-      desc: DC1-Compute04-02
-
-#Border Leaf:
-DC1-Border-01:
-    description: Border Leaf
-    serial: SSJ0000005
-    Ma1: 172.16.254.5/24
-    Lo0: 172.16.255.5/32
-    BGP-AS: '65101'
-    E49/1:
-      portconfig: 10.225.1.1/31
-      desc: DC1-Service-01
-    E50/1:
-      portconfig: 10.225.2.1/31
-      desc: DC1-Service-02
-
-DC1-Border-02:
-    description: Border Leaf
-    serial: SSJ0000006
-    Ma1: 172.16.254.6/24
-    Lo0: 172.16.255.6/32
-    BGP-AS: '65102'
-    E49/1:
-      portconfig: 10.225.1.3/31
-      desc: DC1-Service-01
-    E50/1:
-      portconfig: 10.225.2.3/31
-      desc: DC1-Service-02
-
-#Storage Leaf:
-DC1-Storage-01:
-    description: Storage Leaf
-    serial: SSJ0000007
-    Ma1: 172.16.254.7/24
-    Lo0: 172.16.255.7/32
-    Lo100: 172.16.254.103/32
-    BGP-AS: '65103'
-    MLAG:
-      Domain: Storage
-      PortChannel: 1000
-      VLAN: 4094
-      IP: 10.255.255.1/30
-    E47:
-      portconfig: MLAGTrunk
-      desc: MLAG
-    E48:
-      portconfig: MLAGTrunk
-      desc: MLAG
-    E49/1:
-      portconfig: 10.224.1.1/31
-      desc: DC1-Spine-01
-    E50/1:
-      portconfig: 10.224.2.1/31
-      desc: DC1-Spine-02
-    E51/1:
-      portconfig: 10.224.3.1/31
-      desc: DC1-Spine-03
-    E52/1:
-      portconfig: 10.224.4.1/31
-      desc: DC1-Spine-04
-
-DC1-Storage-02:
-    description: Storage Leaf
-    serial: SSJ0000008
-    Ma1: 172.16.254.8/24
-    Lo0: 172.16.255.8/32
-    Lo100: 172.16.254.103/32
-    BGP-AS: '65103'
-    MLAG:
-      Domain: Storage
-      PortChannel: 1000
-      VLAN: 4094
-      IP: 10.255.255.2/30
-    E47:
-      portconfig: MLAGTrunk
-      desc: MLAG
-    E48:
-      portconfig: MLAGTrunk
-      desc: MLAG
-    E49/1:
-      portconfig: 10.224.1.3/31
-      desc: DC1-Spine-01
-    E50/1:
-      portconfig: 10.224.2.3/31
-      desc: DC1-Spine-02
-    E51/1:
-      portconfig: 10.224.3.3/31
-      desc: DC1-Spine-03
-    E52/1:
-      portconfig: 10.224.4.3/31
-      desc: DC1-Spine-04
+    E1:
+      portconfig: 10.208.4.0/31
+      desc: Arista-CL5
+    E2:
+      portconfig: 10.208.4.2/31
+      desc: Arista-CL6
+    E3:
+      portconfig: 10.208.4.4/31
+      desc: Arista-CL7
+    E4:
+      portconfig: 10.208.4.6/31
+      desc: Arista-CL8
+    E5:
+      portconfig: 10.208.4.8/31
+      desc: Arista-SL9
+    E6:
+      portconfig: 10.208.4.10/31
+      desc: Arista-SL10
 
 #Service Leaf:
-DC1-Service-01:
+Arista-SL9:
     description: Service Leaf
-    serial: SSJ0000009
-    Ma1: 172.16.254.9/24
-    Lo0: 172.16.255.9/32
-    Lo100: 172.16.254.104/32
-    BGP-AS: '65104'
-    MLAG:
-      Domain: Service
-      PortChannel: 1000
-      VLAN: 4094
-      IP: 10.255.255.1/30
-    E45:
-      portconfig: MLAGTrunk
-      desc: MLAG
-    E46:
-      portconfig: MLAGTrunk
-      desc: MLAG
-    E47:
-      portconfig: MLAGTrunk
-      desc: MLAG
-    E48:
-      portconfig: MLAGTrunk
-      desc: MLAG
-    E49/1:
-      portconfig: 10.224.1.5/31
-      desc: DC1-Spine-01
-    E50/1:
-      portconfig: 10.224.2.5/31
-      desc: DC1-Spine-02
-    E51/1:
-      portconfig: 10.224.3.5/31
-      desc: DC1-Spine-03
-    E52/1:
-      portconfig: 10.224.4.5/31
-      desc: DC1-Spine-04
-    E53/1:
-      portconfig: 10.225.1.0/31
-      desc: DC1-Border-01
-    E54/1:
-      portconfig: 10.225.1.2/31
-      desc: DC1-Border-02
+    serial: SSJ99999999
+    container: vService
+    Ma1: 192.168.255.9/24
+    Lo0: 10.208.255.9/32
+    Lo100: 10.208.255.130/32
+    BGP-AS: '65103'
+    E1:
+      portconfig: 10.208.1.9/31
+      desc: Arista-SP1
+    E2:
+      portconfig: 10.208.2.9/31
+      desc: Arista-SP2
+    E3:
+      portconfig: 10.208.3.9/31
+      desc: Arista-SP3
+    E4:
+      portconfig: 10.208.4.9/31
+      desc: Arista-SP4
 
-DC1-Service-02:
+Arista-SL10:
     description: Service Leaf
-    serial: SSJ00000010
-    Ma1: 172.16.254.10/24
-    Lo0: 172.16.255.10/32
-    Lo100: 172.16.254.104/32
-    BGP-AS: '65104'
-    MLAG:
-      Domain: Service
-      PortChannel: 1000
-      VLAN: 4094
-      IP: 10.255.255.2/30
-    E45:
-      portconfig: MLAGTrunk
-      desc: MLAG
-    E46:
-      portconfig: MLAGTrunk
-      desc: MLAG
-    E47:
-      portconfig: MLAGTrunk
-      desc: MLAG
-    E48:
-      portconfig: MLAGTrunk
-      desc: MLAG
-    E49/1:
-      portconfig: 10.224.1.7/31
-      desc: DC1-Spine-01
-    E50/1:
-      portconfig: 10.224.2.7/31
-      desc: DC1-Spine-02
-    E51/1:
-      portconfig: 10.224.3.7/31
-      desc: DC1-Spine-03
-    E52/1:
-      portconfig: 10.224.4.7/31
-      desc: DC1-Spine-04
-    E53/1:
-      portconfig: 10.225.2.0/31
-      desc: DC1-Border-01
-    E54/1:
-      portconfig: 10.225.2.2/31
-      desc: DC1-Border-02
+    serial: SSJ00000000
+    container: vService
+    Ma1: 192.168.255.10/24
+    Lo0: 10.208.255.10/32
+    Lo100: 10.208.255.130/32
+    BGP-AS: '65103'
+    E1:
+      portconfig: 10.208.1.11/31
+      desc: Arista-SP1
+    E2:
+      portconfig: 10.208.2.11/31
+      desc: Arista-SP2
+    E3:
+      portconfig: 10.208.3.11/31
+      desc: Arista-SP3
+    E4:
+      portconfig: 10.208.4.11/31
+      desc: Arista-SP4
 
 #Compute Leaf:
-DC1-Compute01-01:
+Arista-CL5:
     description: Compute Leaf
-    serial: SSJ0000011
-    Ma1: 172.16.254.11/24
-    Lo0: 172.16.255.11/32
-    Lo100: 172.16.254.105/32
-    BGP-AS: '65105'
-    MLAG:
-      Domain: Compute01
-      PortChannel: 1000
-      VLAN: 4094
-      IP: 10.255.255.1/30
-    E49/1:
-      portconfig: 10.224.1.9/31
-      desc: DC1-Spine-01
-    E50/1:
-      portconfig: 10.224.2.9/31
-      desc: DC1-Spine-02
-    E51/1:
-      portconfig: 10.224.3.9/31
-      desc: DC1-Spine-03
-    E52/1:
-      portconfig: 10.224.4.9/31
-      desc: DC1-Spine-04
-    E53/1:
-      portconfig: MLAGTrunk
-      desc: MLAG
-    E54/1:
-      portconfig: MLAGTrunk
-      desc: MLAG
+    serial: SSJ55555555
+    container: vLeaf
+    Ma1: 192.168.255.5/24
+    Lo0: 10.208.255.5/32
+    Lo100: 10.208.255.128/32
+    BGP-AS: '65101'
+    E1:
+      portconfig: 10.208.1.1/31
+      desc: Arista-SP1
+    E2:
+      portconfig: 10.208.2.1/31
+      desc: Arista-SP2
+    E3:
+      portconfig: 10.208.3.1/31
+      desc: Arista-SP3
+    E4:
+      portconfig: 10.208.4.1/31
+      desc: Arista-SP4
 
-DC1-Compute01-02:
+Arista-CL6:
     description: Compute Leaf
-    serial: SSJ0000012
-    Ma1: 172.16.254.12/24
-    Lo0: 172.16.255.12/32
-    Lo100: 172.16.254.105/32
-    BGP-AS: '65105'
-    MLAG:
-      Domain: Compute01
-      PortChannel: 1000
-      VLAN: 4094
-      IP: 10.255.255.2/30
-    E49/1:
-      portconfig: 10.224.1.11/31
-      desc: DC1-Spine-01
-    E50/1:
-      portconfig: 10.224.2.11/31
-      desc: DC1-Spine-02
-    E51/1:
-      portconfig: 10.224.3.11/31
-      desc: DC1-Spine-03
-    E52/1:
-      portconfig: 10.224.4.11/31
-      desc: DC1-Spine-04
-    E53/1:
-      portconfig: MLAGTrunk
-      desc: MLAG
-    E54/1:
-      portconfig: MLAGTrunk
-      desc: MLAG
+    serial: SSJ66666666
+    container: vLeaf
+    Ma1: 192.168.255.6/24
+    Lo0: 10.208.255.6/32
+    Lo100: 10.208.255.128/32
+    BGP-AS: '65101'
+    E1:
+      portconfig: 10.208.1.3/31
+      desc: Arista-SP1
+    E2:
+      portconfig: 10.208.2.3/31
+      desc: Arista-SP2
+    E3:
+      portconfig: 10.208.3.3/31
+      desc: Arista-SP3
+    E4:
+      portconfig: 10.208.4.3/31
+      desc: Arista-SP4
 
-DC1-Compute02-01:
+Arista-CL7:
     description: Compute Leaf
-    serial: SSJ0000013
-    Ma1: 172.16.254.13/24
-    Lo0: 172.16.255.13/32
-    Lo100: 172.16.254.106/32
-    BGP-AS: '65106'
-    MLAG:
-      Domain: Compute02
-      PortChannel: 1000
-      VLAN: 4094
-      IP: 10.255.255.1/30
-    E49/1:
-      portconfig: 10.224.1.13/31
-      desc: DC1-Spine-01
-    E50/1:
-      portconfig: 10.224.2.13/31
-      desc: DC1-Spine-02
-    E51/1:
-      portconfig: 10.224.3.13/31
-      desc: DC1-Spine-03
-    E52/1:
-      portconfig: 10.224.4.13/31
-      desc: DC1-Spine-04
-    E53/1:
-      portconfig: MLAGTrunk
-      desc: MLAG
-    E54/1:
-      portconfig: MLAGTrunk
-      desc: MLAG
+    serial: SSJ77777777
+    container: vLeaf
+    Ma1: 192.168.255.7/24
+    Lo0: 10.208.255.7/32
+    Lo100: 10.208.255.129/32
+    BGP-AS: '65102'
+    E1:
+      portconfig: 10.208.1.5/31
+      desc: Arista-SP1
+    E2:
+      portconfig: 10.208.2.5/31
+      desc: Arista-SP2
+    E3:
+      portconfig: 10.208.3.5/31
+      desc: Arista-SP3
+    E4:
+      portconfig: 10.208.4.5/31
+      desc: Arista-SP4
 
-DC1-Compute02-02:
+Arista-CL8:
     description: Compute Leaf
-    serial: SSJ0000014
-    Ma1: 172.16.254.14/24
-    Lo0: 172.16.255.14/32
-    Lo100: 172.16.254.106/32
-    BGP-AS: '65106'
-    MLAG:
-      Domain: Compute02
-      PortChannel: 1000
-      VLAN: 4094
-      IP: 10.255.255.2/30
-    E49/1:
-      portconfig: 10.224.1.15/31
-      desc: DC1-Spine-01
-    E50/1:
-      portconfig: 10.224.2.15/31
-      desc: DC1-Spine-02
-    E51/1:
-      portconfig: 10.224.3.15/31
-      desc: DC1-Spine-03
-    E52/1:
-      portconfig: 10.224.4.15/31
-      desc: DC1-Spine-04
-    E53/1:
-      portconfig: MLAGTrunk
-      desc: MLAG
-    E54/1:
-      portconfig: MLAGTrunk
-      desc: MLAG
-
-DC1-Compute03-01:
-    description: Compute Leaf
-    serial: SSJ0000015
-    Ma1: 172.16.254.15/24
-    Lo0: 172.16.255.15/32
-    Lo100: 172.16.254.107/32
-    BGP-AS: '65107'
-    MLAG:
-      Domain: Compute03
-      PortChannel: 1000
-      VLAN: 4094
-      IP: 10.255.255.1/30
-    E49/1:
-      portconfig: 10.224.1.17/31
-      desc: DC1-Spine-01
-    E50/1:
-      portconfig: 10.224.2.17/31
-      desc: DC1-Spine-02
-    E51/1:
-      portconfig: 10.224.3.17/31
-      desc: DC1-Spine-03
-    E52/1:
-      portconfig: 10.224.4.17/31
-      desc: DC1-Spine-04
-    E53/1:
-      portconfig: MLAGTrunk
-      desc: MLAG
-    E54/1:
-      portconfig: MLAGTrunk
-      desc: MLAG
-
-DC1-Compute03-02:
-    description: Compute Leaf
-    serial: SSJ0000016
-    Ma1: 172.16.254.16/24
-    Lo0: 172.16.255.16/32
-    Lo100: 172.16.254.107/32
-    BGP-AS: '65107'
-    MLAG:
-      Domain: Compute03
-      PortChannel: 1000
-      VLAN: 4094
-      IP: 10.255.255.2/30
-    E49/1:
-      portconfig: 10.224.1.19/31
-      desc: DC1-Spine-01
-    E50/1:
-      portconfig: 10.224.2.19/31
-      desc: DC1-Spine-02
-    E51/1:
-      portconfig: 10.224.3.19/31
-      desc: DC1-Spine-03
-    E52/1:
-      portconfig: 10.224.4.19/31
-      desc: DC1-Spine-04
-    E53/1:
-      portconfig: MLAGTrunk
-      desc: MLAG
-    E54/1:
-      portconfig: MLAGTrunk
-      desc: MLAG
-
-DC1-Compute04-01:
-    description: Compute Leaf
-    serial: SSJ0000017
-    Ma1: 172.16.254.17/24
-    Lo0: 172.16.255.17/32
-    Lo100: 172.16.254.108/32
-    BGP-AS: '65108'
-    MLAG:
-      Domain: Compute04
-      PortChannel: 1000
-      VLAN: 4094
-      IP: 10.255.255.1/30
-    E49/1:
-      portconfig: 10.224.1.21/31
-      desc: DC1-Spine-01
-    E50/1:
-      portconfig: 10.224.2.21/31
-      desc: DC1-Spine-02
-    E51/1:
-      portconfig: 10.224.3.21/31
-      desc: DC1-Spine-03
-    E52/1:
-      portconfig: 10.224.4.21/31
-      desc: DC1-Spine-04
-    E53/1:
-      portconfig: MLAGTrunk
-      desc: MLAG
-    E54/1:
-      portconfig: MLAGTrunk
-      desc: MLAG
-
-DC1-Compute04-02:
-    description: Compute Leaf
-    serial: SSJ0000018
-    Ma1: 172.16.254.18/24
-    Lo0: 172.16.255.18/32
-    Lo100: 172.16.254.108/32
-    BGP-AS: '65108'
-    MLAG:
-      Domain: Compute04
-      PortChannel: 1000
-      VLAN: 4094
-      IP: 10.255.255.2/30
-    E49/1:
-      portconfig: 10.224.1.23/31
-      desc: DC1-Spine-01
-    E50/1:
-      portconfig: 10.224.2.23/31
-      desc: DC1-Spine-02
-    E51/1:
-      portconfig: 10.224.3.23/31
-      desc: DC1-Spine-03
-    E52/1:
-      portconfig: 10.224.4.23/31
-      desc: DC1-Spine-04
-    E53/1:
-      portconfig: MLAGTrunk
-      desc: MLAG
-    E54/1:
-      portconfig: MLAGTrunk
-      desc: MLAG
+    serial: SSJ88888888
+    container: vLeaf
+    Ma1: 192.168.255.8/24
+    Lo0: 10.208.255.8/32
+    Lo100: 10.208.255.129/32
+    BGP-AS: '65102'
+    E1:
+      portconfig: 10.208.1.7/31
+      desc: Arista-SP1
+    E2:
+      portconfig: 10.208.2.7/31
+      desc: Arista-SP2
+    E3:
+      portconfig: 10.208.3.7/31
+      desc: Arista-SP3
+    E4:
+      portconfig: 10.208.4.7/31
+      desc: Arista-SP4
 ...
