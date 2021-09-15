@@ -28,7 +28,7 @@ if yaml_location == 'http':
   yamlfile = yaml_http.text
 ## CVP Storage - define yaml_configlet as the name of the configlet.
 if yaml_location == 'cvp':
-  yaml_configlet = 'example.yaml'
+  yaml_configlet = 'lab-builder.yaml'
   client = RestClient(cvpserver+rest_get_configlet_by_name+yaml_configlet,'GET')
   if client.connect():
     # Parses configlet data into JSON.
@@ -55,8 +55,8 @@ mlag configuration
    local-interface vlan{{ vlanid }}
    peer-address {{ peerip }}
    peer-link Port-Channel{{ mlag_portchannel }}
-   reload-delay mlag 420
-   reload-delay non-mlag 360
+   reload-delay mlag 360
+   reload-delay non-mlag 420
    reload-delay mode lacp standby\n
 """)
 
@@ -66,8 +66,6 @@ router bgp {{ bgpas }}
    bgp asn notation asdot
    maximum-paths 4 ecmp 4
    router-id {{ rtrid }}
-   update wait-for-convergence
-   update wait-install
    distance bgp 20 200 200
 """)
 
@@ -78,10 +76,10 @@ bgp_neighbor = Template("""\
 """)
 ## iBGP MLAG Template
 ibgp_bgpconfig = Template("""\
-   neighbor iBGP_MLAG peer-group
+   neighbor iBGP_MLAG peer group
    neighbor iBGP_MLAG remote-as {{ bgpas }}
    neighbor iBGP_MLAG next-hop-self
-   neighbor iBGP_MLAG fall-over bfd
+   neighbor iBGP_MLAG bfd
    neighbor {{ mlag_neighbor }} peer-group iBGP_MLAG
 """)
 
@@ -91,27 +89,25 @@ router bgp {{ bgpas }}
    bgp asn notation asdot
    maximum-paths 4 ecmp 4
    router-id {{ rtrid }}
-   update wait-for-convergence
-   update wait-install
    distance bgp 20 200 200
-   neighbor UNDERLAY peer-group
+   neighbor UNDERLAY peer group
    neighbor UNDERLAY send-community standard
-   neighbor OVERLAY peer-group
+   neighbor OVERLAY peer group
    neighbor OVERLAY update-source Loopback0
-   neighbor OVERLAY send-community extended
+   neighbor OVERLAY send-community
    neighbor OVERLAY maximum-routes 0
    neighbor OVERLAY ebgp-multihop 5
 """)
 
 evpn_bgp_neighbor = Template("""\
-   neighbor {{ neighborip }} peer-group UNDERLAY
+   neighbor {{ neighborip }} peer group UNDERLAY
    neighbor {{ neighborip }} remote-as {{ neighboras }}
    neighbor {{ neighborip }} description {{ neighborname }}
 """)
 
 ## EVPN Leaf Template
 evpnleaf = Template("""\
-   neighbor {{ spineip }} peer-group OVERLAY
+   neighbor {{ spineip }} peer group OVERLAY
    neighbor {{ spineip }} remote-as {{ spine_asn }}
    neighbor {{ spineip }} description {{ spine_Lo0 }}
 """)
