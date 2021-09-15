@@ -28,7 +28,7 @@ if yaml_location == 'http':
   yamlfile = yaml_http.text
 ## CVP Storage - define yaml_configlet as the name of the configlet.
 if yaml_location == 'cvp':
-  yaml_configlet = 'lab-builder.yaml'
+  yaml_configlet = 'example.yaml'
   client = RestClient(cvpserver+rest_get_configlet_by_name+yaml_configlet,'GET')
   if client.connect():
     # Parses configlet data into JSON.
