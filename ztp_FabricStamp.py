@@ -1,3 +1,4 @@
+#rev2
 from netaddr import *
 import json
 import yaml
@@ -7,6 +8,7 @@ import requests
 from cvplibrary import RestClient
 import ssl
 from cvplibrary import CVPGlobalVariables, GlobalVariableNames
+#test
 
 device_sn = CVPGlobalVariables.getValue(GlobalVariableNames.CVP_SERIAL)
 
@@ -28,14 +30,15 @@ if yaml_location == 'http':
   yamlfile = yaml_http.text
 ## CVP Storage - define yaml_configlet as the name of the configlet.
 if yaml_location == 'cvp':
-  yaml_configlet = 'example.yaml'
+  #yaml_configlet = 'lab-builder.yaml'
+  yaml_configlet = 'lab-builder.yaml'
   client = RestClient(cvpserver+rest_get_configlet_by_name+yaml_configlet,'GET')
   if client.connect():
     # Parses configlet data into JSON.
     yamlfile = json.loads(client.getResponse())['config']
 
 ### Device Roles
-evpn_roles = ['Spine', 'Compute Leaf', 'Service Leaf', 'Storage Leaf']
+evpn_roles = ['SuperSpine','Spine', 'Compute Leaf', 'Service Leaf', 'Storage Leaf']
 
 bgp_only = ['Border Leaf']
 
@@ -227,10 +230,18 @@ def main():
                                                     spine_Lo0=leaf+'Lo0'))
                     else:
                         for spine in spines:
-                            spineip = doc[spine]['Lo0'].replace('/32','')
-                            spine_asn = doc[spine]['BGP-AS']
-                            tempconfiglet.append(evpnleaf.render(spineip=spineip,
-                                    spine_asn=spine_asn, spine_Lo0=spine+'Lo0'))
+                            if doc[spine]['SpineDomain'] == 'None':
+                              pass
+                            elif doc[spine]['SpineDomain'] == doc[item]['SpineDomain']:
+                              spineip = doc[spine]['Lo0'].replace('/32','')
+                              spine_asn = doc[spine]['BGP-AS']
+                              tempconfiglet.append(evpnleaf.render(spineip=spineip,
+                                  spine_asn=spine_asn, spine_Lo0=spine+'Lo0'))
+                            elif doc[item]['SpineDomain'] == 'Border':
+                              spineip = doc[spine]['Lo0'].replace('/32','')
+                              spine_asn = doc[spine]['BGP-AS']
+                              tempconfiglet.append(evpnleaf.render(spineip=spineip,
+                                  spine_asn=spine_asn, spine_Lo0=spine+'Lo0'))
                     tempconfiglet.append(evpn_afv4_suffix.render())
                     if 'Lo0' in doc[item].keys():
                         tempconfiglet.append('      network '+doc[item]['Lo0'])
