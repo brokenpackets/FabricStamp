@@ -83,7 +83,7 @@ ibgp_bgpconfig = Template("""\
    neighbor iBGP_MLAG remote-as {{ bgpas }}
    neighbor iBGP_MLAG next-hop-self
    neighbor iBGP_MLAG bfd
-   neighbor {{ mlag_neighbor }} peer-group iBGP_MLAG
+   neighbor {{ mlag_neighbor }} peer group iBGP_MLAG
 """)
 
 ## BGP EVPN Template
