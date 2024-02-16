@@ -168,8 +168,6 @@ def main():
         device_role = doc[item]['description']
         tempconfiglet = []
         if 'serial' in doc[item].keys():
-          print doc[item]['serial']
-          print device_sn
           if device_sn == doc[item]['serial']:
             tempconfiglet.append('hostname %s\n' % item)
             if 'Ma1' in doc[item].keys():
